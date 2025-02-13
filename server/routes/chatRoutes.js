@@ -15,4 +15,9 @@ router.get('/user/:userId', chatController.getUserChats);
 // Delete a chat and its associated messages
 router.delete('/:chatId', chatController.deleteChat);
 
+// Health check route
+router.get('/health', (req, res) => {
+    res.json({ status: 'OK', service: 'chat' });
+});
+
 module.exports = router;
